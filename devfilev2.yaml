@@ -1,0 +1,24 @@
+schemaVersion: 2.1.0
+metadata:
+  name: python-hello-worlds
+components:
+  - name: pythons
+    container:
+      image: quay.io/devfile/universal-developer-ime:ubi8-3735d4f
+      volumeMounts:
+        - name: venv
+          path: /home/user/.venv
+      memoryLimit: 512Mi
+      mountSources: true
+  - name: venv
+    volume:
+      size: 2G
+commands:
+  - id: run
+    exec:
+      label: "Run the application"
+      component: python
+      workingDir: ${PROJECTS_ROOT}/python-hello-worlds
+      commandLine: "touch hello-world2.py"
+      group:
+        kind: run
