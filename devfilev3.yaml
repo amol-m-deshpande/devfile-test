@@ -1,0 +1,12 @@
+schemaVersion: 2.1.0
+metadata:
+  name: python-hello-worlds
+components:
+  - name: pythons
+    container:
+      image: quay.io/devfile/universal-developer-ime:ubi8-3735d4f
+      memoryLimit: 512Mi
+      mountSources: true
+  - name: venv
+    volume:
+      size: 2G
