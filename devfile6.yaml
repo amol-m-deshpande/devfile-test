@@ -1,0 +1,15 @@
+schemaVersion: 2.1.0
+metadata:
+  name: golang-echo-m
+  namespace: iam-amol-deshpande-in-ibm-com-che-7yy0of
+components:
+  - attributes:
+      app.kubernetes.io/name: go-cli
+      che-theia.eclipse.org/vscode-extensions:
+        - 'https://github.com/golang/vscode-go/releases/download/v0.23.0/go-0.23.0.vsix'
+    container:
+      image: amoldeshpande/sandbox-terminal
+      memoryLimit: 2Gi
+      mountSources: true
+      sourceMapping: /projects
+    name: go-cli
